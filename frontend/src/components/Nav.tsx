@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({ current_User = 'Login' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Define links in an array of objects
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: `/user/${current_User}`, label: current_User }
   ];
 
   const toggleMenu = () => {
